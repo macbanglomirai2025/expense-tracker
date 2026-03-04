@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Advanced Finance Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="top-bar">
+      <h1>💰 Advanced Finance Tracker</h1>
+      <button id="themeToggle">🌙 Dark Mode</button>
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="summary">
+      <div>Income: ₹<span id="incomeTotal">0</span></div>
+      <div>Expense: ₹<span id="expenseTotal">0</span></div>
+      <div>Balance: ₹<span id="balanceTotal">0</span></div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <input type="text" id="search" placeholder="Search transactions..." />
+      <select id="filterType">
+        <option value="all">All</option>
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+    </div>
+
+    <!-- Form -->
+    <form id="transaction-form">
+      <input type="hidden" id="transaction-id" />
+      <input type="text" id="title" placeholder="Title" required />
+      <input type="number" id="amount" placeholder="Amount" required />
+      <input type="text" id="category" placeholder="Category" required />
+      <input type="date" id="date" required />
+
+      <select id="type" required>
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+
+      <button type="submit">Save</button>
+    </form>
+
+    <h3>Transactions</h3>
+    <ul id="transaction-list"></ul>
+
+    <h3>Monthly Overview</h3>
+    <canvas id="monthlyChart"></canvas>
+
+    <h3>Category Breakdown</h3>
+    <canvas id="categoryChart"></canvas>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
